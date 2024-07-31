@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>Hello World</title>
+    <link rel="stylesheet" href="mystyle.css">
+  </head>
+  <body>
+    <h1 id="header1">Hello World!!!</h1>
+    <p>This is a paragraph</p>
+    <h1 id="header2">Hi again world!!!</h1>
+    <p>This is the second paragraph</p>
+    <div>
+        <button onclick="ShowAlert()">Click Me</button>
+        <input type="button" onclick="ShowGoodbye()" value="Click Me">
+    </div>
+  </body>
+  <script>
+
+    function ShowAlert()
+    {
+        document.getElementById("header1").style.color = "yellow"
+    }
+   
+    function ShowGoodbye()
+    {
+        document.getElementById("header2").style.color = "green"
+    }
+  </script>
+</html>
