@@ -138,16 +138,16 @@ const basketballGame = {
   },
   halfTime() {
     console.log(`Halftime score is ${this.score}. Fouls: ${this.fouls}`);
-    return this; // Return 'this' to allow chaining
+    return this; 
   },
 
   fullTime() {
     console.log(`Full-time score is ${this.score}. Fouls: ${this.fouls}`);
-    return this; // Return 'this' to allow chaining
+    return this; 
   }
 };
 
-// Calling methods with chaining
+
 basketballGame
   .basket()       // 2 points
   .freeThrow()    // +1 point (3 total)
