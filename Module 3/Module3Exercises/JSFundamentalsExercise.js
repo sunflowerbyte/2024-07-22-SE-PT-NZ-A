@@ -149,12 +149,12 @@ const basketballGame = {
 
 
 basketballGame
-  .basket()       // 2 points
-  .freeThrow()    // +1 point (3 total)
-  .foul()         // 1 foul
-  .threePointer() // +3 points (6 total)
-  .halfTime()     // Halftime score is 6. Fouls: 1
-  .freeThrow()    // +1 point (7 total)
-  .threePointer() // +3 points (10 total)
-  .foul()         // 2 fouls
-  .fullTime();    // Full-time score is 10. Fouls: 2
+  .basket()    
+  .freeThrow()  
+  .foul()       
+  .threePointer() 
+  .halfTime()     
+  .freeThrow()   
+  .threePointer() 
+  .foul()        
+  .fullTime();    
