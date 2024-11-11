@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Module 1 Exercise 3</title>
+
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 0;
+      }
+      .container {
+        display: flex;
+        min-height: 100vh;
+        align-items: stretch;
+      }
+      .column {
+        background: goldenrod;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+      }
+      .button { margin-top: 10px; padding: 10px 20px; background-color: rgb(66, 60, 31); color: white; border: none; cursor: pointer; }
+      .button:hover { background-color: rgb(179, 179, 223); 
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="column" id="column1">
+        <h1 id="heading1">Hello</h1>
+        <img src="https://images.pexels.com/photos/17815963/pexels-photo-17815963/free-photo-of-blue-facade-of-residential-building.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load" alt="building photo" width="350">
+        <br>
+        <button class="button" onclick="ButtonHeading1()">Change Me</button>
+      </div>
+
+      <div class="column" id="column2">
+        <h1 id="heading2">World</h1>
+        <img src="https://images.pexels.com/photos/26737193/pexels-photo-26737193/free-photo-of-musei-capitolini.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load" alt="building photo" width="350">
+        <br>
+        <button class="button" onclick="ButtonHeading2()">Change Me </button>
+      </div>
+    </div>
+  </body>
+
+  <script>
+  function ButtonHeading1() {
+    document.getElementById('column1').style.backgroundColor = 'pink';
+    document.getElementById('heading1').textContent = 'Changed!';
+  }
+
+  function ButtonHeading2() {
+    document.getElementById('column2').style.backgroundColor = 'lavender';
+    document.getElementById('heading2').textContent = 'Altered!';
+  }
+   </script>
+
+</html>

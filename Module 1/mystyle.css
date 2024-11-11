@@ -1,0 +1,28 @@
+.div1
+{
+    background-color: rgb(164, 164, 219);
+    font-size: xx-large;
+    font-family: 'Courier New', Courier, monospace;
+}
+.div2
+{
+    background-color: bisque;
+    font-size: xx-small;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+div
+{
+    background-color: aquamarine;
+}
+p
+{
+    color: red;
+}
+h1
+{
+    color: crimson;
+}
+h2
+{
+    color: blue;
+}

@@ -1,0 +1,14 @@
+var trainerName = "Tricia"
+let companyName = "IOD"
+const trainerRole ="Lead trainer" //
+console.log(trainerName)
+console.log(companyName)
+console.log(trainerRole)
+
+//variables are placeholders of data. can assign value after data is declared in var and let; const required value to be declared o/w will error and cannot be modified. var is now obsolete; const and let are commonly used. 
+//var trainerName
+//let companyName
+//below are values
+//trainerName ="Tricia"
+//companyName ="IOD"
+

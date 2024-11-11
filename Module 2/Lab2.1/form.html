@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Page</title>
+</head>
+<body>
+    <nav><a href="index.html" target="_blank">Home</a></nav>
+    <form method="POST" action="http://localhost:3000/profile">
+       <div> 
+        <label for ="firstName">First Name</label>
+        <input type="text" id="firstName">
+    </div>
+       <div>
+        <label for ="secondName">Second Name</label>
+        <input type="text" id="secondName">
+    </div>
+<div>
+       <input type="radio" id="html" name="lang_1" value="HTML">
+       <label for ="html">HTML</label>
+
+        <input type="radio" id="css" name="lang_2" value="CSS">
+        <label for ="css">CSS</label>
+  
+        <input type="radio" id="javaScript" name="lang_3" value="javaScript">
+        <label for ="javaScript">JavaScript</label>
+     </div>
+     <div>
+        <input type="checkbox" id="toyota" name="car1" value="car1">
+        <label for ="toyota">Toyota</label>
+     
+        <input type="checkbox" id="hyundai" name="car2" value="car2">
+        <label for ="hyundai">Hyundai</label>
+     
+        <input type="checkbox" id="kia" name="car3" value="car3">
+        <label for ="kia">Kia</label>
+     </div>
+     <label for="cars">Select vehicles you own</label>
+     <select id="cars" name="cars">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Toyota</option>
+        <option value="fiat">Kia</option>
+        <option value="audi">Hyundai</option>
+     </select>
+     <button type="submit">Submit form</button>
+    </form>
+    
+</body>
+</html>
