@@ -1,5 +1,0 @@
-console.log("Hello World")
-console.log("This is Tricia")
-console.log("I'm learning module 1")
-console.log ("very basic and interesting")
-console.log ()
