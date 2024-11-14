@@ -14,6 +14,9 @@ import FullName from './Components/FullName'
 import ComplexComment from './Components/ComplexComment'
 import Callout from './Components/Callout'
 import MovieLists from './Components/MovieLists'
+import DisplayText from './Components/DisplayText'
+import MoodChanger from './Components/MoodChanger'
+import BirthdayTranslator from './Components/BirthdayTranslator'
 
 function App() {
 
@@ -28,6 +31,9 @@ function App() {
 
   return (
     <>
+    <BirthdayTranslator></BirthdayTranslator>
+    <MoodChanger></MoodChanger>
+    {/*<DisplayText></DisplayText>
     <MovieLists></MovieLists>
 <Callout title="Nested React Component"
 message="Simple message with a fancy box applied via composition">
@@ -59,12 +65,12 @@ message="Simple message with a fancy box applied via composition">
 {/*<NameTextComponent></NameTextComponent>
 <Address></Address>
 <Sample></Sample>
-<Sample2></Sample2>*/}
+<Sample2></Sample2>
 <FullName firstName="Mirza" lastName="Arshad"></FullName>
 <Books>
   <div>Book Title</div>
   <div>Book Cover</div>
-</Books>
+</Books>*/}
     </>
   )
 }
