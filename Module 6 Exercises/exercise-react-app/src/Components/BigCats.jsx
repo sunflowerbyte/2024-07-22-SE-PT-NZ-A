@@ -1,3 +1,4 @@
+import { useState } from "react";
 import SingleCat from "./SingleCat";
 
 function BigCats() {
@@ -37,11 +38,45 @@ function BigCats() {
     },
   ];
 
-  const catItems = cats.map(cat => <SingleCat key={cat.id} name={cat.name} latinName={cat.latinName} image={cat.image}></SingleCat>)
+  const[currentCats,setCurrentBigcats] = useState(cats)
+
+  const catItems = currentCats.map(cat => <SingleCat key={cat.id} name={cat.name} latinName={cat.latinName} image={cat.image}></SingleCat>)
+
+  function handleReverseBigcats()
+  {
+    let clonedCats = [...currentCats]
+    clonedCats.reverse()
+      setCurrentBigcats(clonedCats)
+  }
+
+  function
+  handleSortBigcats()
+  {
+    let clonedCats = [...currentCats]
+    clonedCats.sort((a, b) => a.name.localeCompare(b.name))
+    setCurrentBigcats(clonedCats)
+  }
+
+  function handleFilterPanthera() {
+    const pantheraCats = cats.filter(cat => cat.latinName.startsWith("Panthera"));
+    setCurrentBigcats(pantheraCats);
+  }
+
+  // Function to reset the list to show all cats
+  function handleResetCats() {
+    setCurrentBigcats(cats);
+  }
+
   return (
+    <>
     <div>
       <ul> {catItems}</ul>
+      <button onClick={handleReverseBigcats}>Reverse Big Cats List</button>
+      <button onClick={handleSortBigcats}>Sort Alphabetically</button>
+      <button onClick={handleFilterPanthera}>Show Panthera Family</button>
+      <button onClick={handleResetCats}>Reset List</button>
     </div>
+  </>
   );
 }
 

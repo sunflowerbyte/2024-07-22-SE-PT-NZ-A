@@ -1,4 +1,5 @@
 import Movie from "./Movie"
+import { useState } from "react"
 
 function MovieLists()
 {
@@ -30,8 +31,18 @@ function MovieLists()
 
      ]
 
+const [currentMovies, setCurrentMovies] = useState(movies)
+
     
-const movieItems = movies.map(movie=> <Movie key={movie.id} title={movie.title} year={movie.year} synopsis={movie.synopsis}></Movie>)
+const movieItems = currentMovies.map(movie=> <Movie key={movie.id} title={movie.title} year={movie.year} synopsis={movie.synopsis}></Movie>)
+
+function handleReverseMovies()
+{
+let clonedMovies = [...currentMovies]
+clonedMovies.reverse()
+setCurrentMovies(clonedMovies)
+}
+
     return(
 <div>
     <ul>
@@ -39,6 +50,7 @@ const movieItems = movies.map(movie=> <Movie key={movie.id} title={movie.title} 
 movieItems
         }
     </ul>
+    <button onClick={handleReverseMovies}>Reverse Movies</button>
 </div>
     )
 }

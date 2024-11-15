@@ -17,6 +17,7 @@ import MovieLists from './Components/MovieLists'
 import DisplayText from './Components/DisplayText'
 import MoodChanger from './Components/MoodChanger'
 import BirthdayTranslator from './Components/BirthdayTranslator'
+import Weather from './Components/Weather'
 
 function App() {
 
@@ -31,9 +32,11 @@ function App() {
 
   return (
     <>
+    <MovieLists></MovieLists>
+    {/*<Weather></Weather>
     <BirthdayTranslator></BirthdayTranslator>
     <MoodChanger></MoodChanger>
-    {/*<DisplayText></DisplayText>
+    <DisplayText></DisplayText>
     <MovieLists></MovieLists>
 <Callout title="Nested React Component"
 message="Simple message with a fancy box applied via composition">
