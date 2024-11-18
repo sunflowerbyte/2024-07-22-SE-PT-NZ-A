@@ -19,7 +19,7 @@ import MoodChanger from './Components/MoodChanger'
 import BirthdayTranslator from './Components/BirthdayTranslator'
 import Weather from './Components/Weather'
 import LoginForm from './Components/LoginForm'
-
+import ExplodingBomb from './Components/ExplodingBomb'
 function App() {
 
   const comment = {
@@ -33,8 +33,9 @@ function App() {
 
   return (
     <>
-    <MovieLists></MovieLists>
-    {/*<LoginForm></LoginForm>
+    <ExplodingBomb></ExplodingBomb>
+    {/*<MovieLists></MovieLists>
+    <LoginForm></LoginForm>
      <MovieLists></MovieLists>
    <Weather></Weather>
     <BirthdayTranslator></BirthdayTranslator>

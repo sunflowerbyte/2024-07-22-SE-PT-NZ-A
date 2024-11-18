@@ -5,6 +5,7 @@ import './App.css'
 import Greeting from './Components/Greeting'
 import BigCats from './Components/BigCats'
 import Emoji from './Components/Emoji'
+import Calculator from './Components/Calculator'
 function App() {
 
   return (
@@ -17,6 +18,7 @@ function App() {
     <BigCats></BigCats>
 
     <Emoji></Emoji>
+    <Calculator></Calculator>
     </>
 
 
