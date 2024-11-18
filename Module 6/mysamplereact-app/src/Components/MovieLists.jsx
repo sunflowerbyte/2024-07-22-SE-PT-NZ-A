@@ -1,3 +1,4 @@
+import AddMovieForm from "./AddMovieForm"
 import Movie from "./Movie"
 import { useState } from "react"
 
@@ -33,7 +34,12 @@ function MovieLists()
 
 const [currentMovies, setCurrentMovies] = useState(movies)
 
-    
+function handleAddMovie(newMovie)
+{
+    newMovie.id= currentMovies.length + 1
+    let clonedMovies=[...currentMovies, newMovie]
+    setCurrentMovies(clonedMovies)
+}    
 const movieItems = currentMovies.map(movie=> <Movie key={movie.id} title={movie.title} year={movie.year} synopsis={movie.synopsis}></Movie>)
 
 function handleReverseMovies()
@@ -44,6 +50,7 @@ setCurrentMovies(clonedMovies)
 }
 
     return(
+        <>
 <div>
     <ul>
         {
@@ -52,6 +59,10 @@ movieItems
     </ul>
     <button onClick={handleReverseMovies}>Reverse Movies</button>
 </div>
+<div>
+    <AddMovieForm onAddMovie={handleAddMovie}></AddMovieForm>
+</div>
+    </>
     )
 }
 

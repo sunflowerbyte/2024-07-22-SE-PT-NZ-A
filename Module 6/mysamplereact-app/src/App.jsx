@@ -18,6 +18,7 @@ import DisplayText from './Components/DisplayText'
 import MoodChanger from './Components/MoodChanger'
 import BirthdayTranslator from './Components/BirthdayTranslator'
 import Weather from './Components/Weather'
+import LoginForm from './Components/LoginForm'
 
 function App() {
 
@@ -33,7 +34,9 @@ function App() {
   return (
     <>
     <MovieLists></MovieLists>
-    {/*<Weather></Weather>
+    {/*<LoginForm></LoginForm>
+     <MovieLists></MovieLists>
+   <Weather></Weather>
     <BirthdayTranslator></BirthdayTranslator>
     <MoodChanger></MoodChanger>
     <DisplayText></DisplayText>
