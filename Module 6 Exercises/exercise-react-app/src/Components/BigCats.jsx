@@ -1,3 +1,4 @@
+import AddCatForm from "./AddCatForm";
 import { useState } from "react";
 import SingleCat from "./SingleCat";
 
@@ -67,6 +68,13 @@ function BigCats() {
     setCurrentBigcats(cats);
   }
 
+  function handleAddCat(newCat)
+  {
+    newCat.id=currentCats.length + 1
+    let clonedCats = [...currentCats,newCat]
+    setCurrentBigcats(clonedCats)
+  }
+
   return (
     <>
     <div>
@@ -75,6 +83,9 @@ function BigCats() {
       <button onClick={handleSortBigcats}>Sort Alphabetically</button>
       <button onClick={handleFilterPanthera}>Show Panthera Family</button>
       <button onClick={handleResetCats}>Reset List</button>
+    </div>
+    <div>
+      <AddCatForm onAddCat={handleAddCat}></AddCatForm>
     </div>
   </>
   );
