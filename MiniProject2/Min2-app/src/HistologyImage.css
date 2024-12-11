@@ -1,0 +1,21 @@
+/* src/components/HistologyImage.css */
+.histology-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+  }
+  
+  .image-container {
+    border: 1px solid #ddd;
+    padding: 8px;
+    border-radius: 4px;
+    text-align: center;
+  }
+  
+  .image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+  
