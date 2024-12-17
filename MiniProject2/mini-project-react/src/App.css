@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+}
+
+/* Add padding to prevent content from being hidden under the fixed header */
+.app {
+  padding-top: 70px; /* Adjust this value based on the height of your Dashboard */
+}
+
+.coffee-list,
+.order-history,
+.cart-container {
+  padding: 20px; /* Adds spacing to page content */
+}
+
+
+header.dashboard {
+  grid-area: header;
+  background-color: #6f4e37; /* Coffee color */
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+}
+
+header.dashboard .title {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+nav.nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav.nav .nav-item {
+  cursor: pointer;
+}
+
+main {
+  grid-area: main;
+}
+
+aside {
+  grid-area: aside;
+  border: 1px solid #ddd;
+  padding: 10px;
+  background: #fff;
+  border-radius: 8px;
+}
