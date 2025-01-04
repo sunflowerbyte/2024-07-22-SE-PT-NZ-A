@@ -1,35 +1,27 @@
-const express = require("express");
-const dbConnect = require("./dbConnect"); // Import the dbConnect module
+require('dotenv').config();
+const express = require('express');
+const cors = require('cors');
+const dbConnect = require('./dbConnect');
 
-// Default route
+const authRoutes = require('./routes/authRoutes');
+const maintenanceRoutes = require('./routes/maintenanceRoutes');
+const inventoryRoutes = require('./routes/inventoryRoutes');
+const userRoutes = require('./routes/userRoutes')
 
-const app = express(); //creating the application
+const app = express();
 
-require("dotenv").config();
-// parse requests of content-type -application / json;
+// Middleware
+app.use(cors());
+app.use(express.json());
+dbConnect();
 
 // Routes
-const authRoutes = require('./routes/auth');
-const maintenanceRoutes = require('./routes/maintenance');
-const inventoryRoutes = require('./routes/inventory');
-const noticeRoutes = require('./routes/notice');
+app.get('/', (req, res) => res.send('Server is running!'));
 
-// Routes Middleware
 app.use('/api/auth', authRoutes);
 app.use('/api/maintenance', maintenanceRoutes);
 app.use('/api/inventory', inventoryRoutes);
-app.use('/api/notice', noticeRoutes);
+app.use('./api/users', userRoutes);
 
-
-
-app.use(express.json());
-app.get("/", (req, res) => {
-  res.json({ message: "Welcome to the Laboratory Management System!" });
-});
-
-
-// Start the server
 const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}.`);
-});
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

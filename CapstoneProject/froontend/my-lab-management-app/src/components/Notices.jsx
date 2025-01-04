@@ -8,12 +8,12 @@ const Notices = () => {
   useEffect(() => {
     const fetchNotices = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/notice', {
+        const response = await axios.get('http://localhost:5000/api/notices', {
           headers: { Authorization: `Bearer ${token}` },
         });
         setNotices(response.data);
       } catch (error) {
-        console.error('Error fetching notices', error);
+        console.error('Error fetching notices:', error);
       }
     };
 

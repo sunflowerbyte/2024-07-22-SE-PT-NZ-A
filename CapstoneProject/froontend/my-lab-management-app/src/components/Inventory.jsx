@@ -13,7 +13,7 @@ const Inventory = () => {
         });
         setInventory(response.data);
       } catch (error) {
-        console.error('Error fetching inventory data', error);
+        console.error('Error fetching inventory:', error);
       }
     };
 

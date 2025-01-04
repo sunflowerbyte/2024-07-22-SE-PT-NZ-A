@@ -13,7 +13,7 @@ const Maintenance = () => {
         });
         setRequests(response.data);
       } catch (error) {
-        console.error('Error fetching maintenance data', error);
+        console.error('Error fetching maintenance requests:', error);
       }
     };
 

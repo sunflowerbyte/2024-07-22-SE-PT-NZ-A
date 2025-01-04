@@ -5,7 +5,7 @@ import Maintenance from './components/Maintenance';
 import Inventory from './components/Inventory';
 import Notices from './components/Notices';
 
-const App = () => {
+function App() {
   return (
     <Router>
       <Routes>
@@ -17,6 +17,6 @@ const App = () => {
       </Routes>
     </Router>
   );
-};
+}
 
 export default App;
