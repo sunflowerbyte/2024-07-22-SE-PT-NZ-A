@@ -1,48 +1,64 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import { loginUser} from '../api';
+import '../Login.css'
+
+
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [message, setMessage] = useState('');
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/login', {
-        username,
-        password,
-      });
-      localStorage.setItem('token', response.data.token); // Save token
-      alert('Login successful!');
-      navigate('/dashboard'); // Redirect after login
+      const response = await loginUser({ username, password }); // Call the API
+      console.log(response)
+      localStorage.setItem('token', response.token); // Save JWT token
+            setMessage('Login successful!');
+            navigate('/dashboard');
+
     } catch (error) {
-      alert(error.response?.data?.message || 'Login failed!');
+      setMessage(error.response?.data?.message || 'Login failed');
     }
   };
 
   return (
-    <div>
+    <div className='login'>
       <h2>Login</h2>
       <form onSubmit={handleLogin}>
+        <div className='text_area'>
         <input
           type="text"
           placeholder="Username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           required
+          className='text_input'
         />
-        <input
+</div>
+<div className='text_area'>
+<input
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
+          className='text_input'
         />
-        <button type="submit">Login</button>
+        </div>
+
+        <button type="submit" className='btn'>Login</button>
       </form>
+      {message && <p>{message}</p>}
+
+      <div>
+        <image src={'/Users/trang/Downloads/Untitled%20design.svg'}></image>
+      </div>
     </div>
+
   );
 };
 
