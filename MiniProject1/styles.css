@@ -1,0 +1,116 @@
+/* General Body Styling */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #44644f; 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header Styling */
+h1 {
+    color: #ffffff; 
+    margin-bottom: 30px;
+    text-align: center;
+    font-family: Josefin Sans;
+}
+
+/* Plant List Styling */
+#plant-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* General Card Improvements */
+.plant-card {
+    border: none;
+    border-radius: 12px; /* Round the card corners */
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.plant-card:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); 
+}
+
+.plant-card img {
+    border-radius: 12px 12px 0 0;
+    height: 200px;
+    object-fit: cover; 
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #2b4e33; 
+
+.card-text {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Button Styling */
+.btn-primary {
+    background-color: #509479;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+
+
+/* Badge Styling */
+.badge-info {
+    background-color: #17a2b8; 
+    margin-right: 5px;
+}
+
+.badge-success {
+    background-color: #28a745; 
+}
+
+/* Responsiveness for Smaller Screens */
+@media (max-width: 768px) {
+    .plant-card img {
+        height: 150px; 
+    }
+
+    .card-title {
+        font-size: 1.1rem;
+    }
+}
+
+
+/* Modal Content Styling */
+#modal-plant-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+#modal-plant-content {
+    text-align: center;
+}
+
+.spinner-border {
+    display: block;
+    margin: 30px auto;
+}
+
+/* Search Input Styling */
+input[type="text"] {
+    font-size: 1.1em;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    display: block;
+}

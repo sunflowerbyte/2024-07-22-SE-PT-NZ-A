@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>Hello World</title>
+    <link rel="stylesheet" href="mystyle.css">
+  </head>
+  <body>
+    <h1 id="header1">Hello World!!!</h1>
+    <p>This is a paragraph</p>
+    <h1 id="header2">Hi again world!!!</h1>
+    <p>This is the second paragraph</p>
+    <div>
+        <button onclick="ShowAlert()">Click Me</button>
+        <input type="button" onclick="ShowGoodbye()" value="Click Me">
+    </div>
+  </body>
+  <script>
+console.log('this is a Message')
+console.info('this is info')
+console.warn('this is a warning')
+console.error('this is an error');    
+function Sum(a, b)
+{
+  return a + b
+}
+function ShowAlert()
+    {
+        alert(Sum(Sum(4,5),10))
+      }
+   
+    function ShowGoodbye()
+    {
+        document.getElementById("header2").style.color = "green"
+        console.log("Show Goodbye got called")
+      }
+  </script>
+</html>
