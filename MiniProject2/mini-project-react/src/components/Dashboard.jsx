@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-scroll";
 import { PiCat } from "react-icons/pi";
 import Button from "../layouts/Button";

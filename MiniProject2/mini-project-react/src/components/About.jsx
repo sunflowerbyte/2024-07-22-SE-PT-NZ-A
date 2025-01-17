@@ -1,11 +1,9 @@
-import React from 'react';
 import img from '../assets/smolmomo.JPG';
 import { Button } from 'react-scroll';
 
 const About = () => {
   return (
     <div className="min-h-screen flex flex-col lg:flex-row items-center lg:px-20 px-5">
-      {/* Image Section with Caption */}
       <div className="lg:w-1/3 w-full flex flex-col items-center lg:items-start">
         <figure>
           <img
@@ -21,7 +19,6 @@ const About = () => {
 
       {/* Content Section */}
       <div className="lg:w-2/3 w-full space-y-4 lg:pt-0 lg:pl-6">
-        {/* Removed top padding and added small padding-left */}
         <h1 className="font-semibold text-4xl text-center md:text-start">
           Why Choose Us?
         </h1>
@@ -33,7 +30,7 @@ const About = () => {
         </p>
         <p>
           At our café, every cup of coffee supports the well-being of our feline
-          residents. Whether you're looking to unwind, study, or adopt a furry
+          residents. Whether you are looking to unwind, study, or adopt a furry
           companion, we have something special for everyone.
         </p>
         <div className="flex justify-center lg:justify-start">

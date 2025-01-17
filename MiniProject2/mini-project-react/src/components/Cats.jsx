@@ -1,17 +1,16 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import DrinksCard from "../layouts/DrinksCard";
 const Cats = () => {
-  const [cats, setCats] = useState([]); // State to store cat data
-  const [loading, setLoading] = useState(true); // Loading state
+  const [cats, setCats] = useState([]); 
+  const [loading, setLoading] = useState(true); 
 
-  // Fetch Cat API data
   useEffect(() => {
     const fetchCats = async () => {
       try {
         const response = await fetch("https://api.thecatapi.com/v1/images/search?limit=10");
         const data = await response.json();
-        setCats(data); // Set the cat data in state
-        setLoading(false); // Stop loading
+        setCats(data); 
+        setLoading(false); 
       } catch (error) {
         console.error("Error fetching cat data:", error);
         setLoading(false);
@@ -27,20 +26,20 @@ const Cats = () => {
         Meet Our Cafe Cats
       </h1>
 
-      {/* Loading State */}
+
       {loading ? (
         <p>Loading cats...</p>
       ) : (
         <div className="flex flex-wrap gap-8 justify-center">
-          {/* Map through cats and display each cat */}
+
           {cats.map((cat) => (
             <DrinksCard
               key={cat.id}
               img={
-                cat.image?.url || "https://via.placeholder.com/150" // Fallback if no image exists
+                cat.image?.url || "https://via.placeholder.com/150"
               }
               title={cat.name}
-              price={cat.origin} // Replace price with origin
+              price={cat.origin}
             />
           ))}
         </div>

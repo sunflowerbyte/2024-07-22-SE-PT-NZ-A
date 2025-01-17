@@ -1,26 +1,28 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 import DrinksCard from "../layouts/DrinksCard";
 
 const Drinks = () => {
-  const [coffees, setCoffees] = useState([]); // State to hold coffee data
-  const [loading, setLoading] = useState(true); // State for loading indicator
+  const [coffees, setCoffees] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  // Fetch coffee data from API
   useEffect(() => {
     const fetchCoffees = async () => {
       try {
-        const response = await fetch("https://api.sampleapis.com/coffee/hot");
-        const data = await response.json();
-        setCoffees(data); // Set the fetched coffee data
-        setLoading(false); // Stop loading
+        const response = await axios.get("https://api.sampleapis.com/coffee/hot");
+        console.log("Fetched data with Axios: ", response.data); // Debugging log
+        setCoffees(Array.isArray(response.data) ? response.data : []); // Ensure array
       } catch (error) {
-        console.error("Error fetching coffee data: ", error);
-        setLoading(false);
+        console.error("Error fetching coffee data with Axios: ", error);
+      } finally {
+        setLoading(false); // Stop loading whether successful or not
       }
     };
 
     fetchCoffees();
   }, []);
+
+  console.log("Coffees state: ", coffees); // Debugging log
 
   return (
     <div className="min-h-screen flex flex-col justify-center items-center lg:px-32 px-5">
@@ -28,21 +30,21 @@ const Drinks = () => {
         Our Coffee Selection
       </h1>
 
-      {/* Loading Indicator */}
       {loading ? (
         <p className="text-xl">Loading coffee options...</p>
-      ) : (
+      ) : coffees.length > 0 ? (
         <div className="flex flex-wrap gap-8 justify-center">
-          {/* Dynamically render cards based on API data */}
           {coffees.map((coffee) => (
             <DrinksCard
-              key={coffee.id}
-              img={coffee.image} // Use API image URL
-              title={coffee.title} // Use coffee title
-              price="$5.99" // Static price as API doesn't provide one
+              key={coffee.id || Math.random()}
+              img={coffee.image || "default-image-url.jpg"}
+              title={coffee.title || "Unknown Coffee"}
+              price="$5.99"
             />
           ))}
         </div>
+      ) : (
+        <p>No coffee options available.</p>
       )}
     </div>
   );

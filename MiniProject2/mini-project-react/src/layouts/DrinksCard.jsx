@@ -1,4 +1,4 @@
-import React from "react";
+import PropTypes from "prop-types";
 
 const DrinksCard = ({ img, title, price }) => {
   return (
@@ -10,6 +10,13 @@ const DrinksCard = ({ img, title, price }) => {
       </div>
     </div>
   );
+};
+
+// Define prop types
+DrinksCard.propTypes = {
+  img: PropTypes.string.isRequired, 
+  title: PropTypes.string.isRequired, 
+  price: PropTypes.string.isRequired, 
 };
 
 export default DrinksCard;
